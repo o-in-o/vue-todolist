@@ -1,5 +1,6 @@
 <template>
   <div class="tasks-block">
+    <p v-if="!tasks.length">Список задач пуст</p>
     <task-cmpt
       v-for="(item, index) in tasks"
       :id="item.id"
@@ -27,3 +28,11 @@ export default class TasksBlock extends Vue {
   }
 }
 </script>
+
+<style scoped lang="scss">
+p {
+  border: 1px solid #12703A;
+  background-color: #d1ecdd;
+  padding: 5px 10px;
+}
+</style>
