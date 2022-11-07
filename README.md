@@ -9,3 +9,8 @@ yarn install
 ```
 yarn serve
 ```
+
+#### Ссылка на демо приложения
+```
+https://vue-todolist-beta.vercel.app/
+```
