@@ -1,20 +1,29 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Главная</router-link> |
+      <router-link to="/tasks">Задачи</router-link>
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Open Sans, Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & input {
+    font-family: Open Sans, Roboto, Avenir, Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+  }
 }
 
 nav {
@@ -22,10 +31,10 @@ nav {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #5b5b5b;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #2a3bb7;
     }
   }
 }
