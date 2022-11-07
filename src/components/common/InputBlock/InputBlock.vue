@@ -30,12 +30,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { tasksStoreModule } from "@/store";
+import { ITodoList } from "@/store/modules/TasksStoreModule";
 import { v4 as uuidv4 } from "uuid";
 import CustomInput from "../../UI/CustomInput.vue";
 import CustomButton from "../../UI/CustomButton.vue";
 import BookPlus from "vue-material-design-icons/BookPlus.vue";
 import Magnify from "vue-material-design-icons/Magnify.vue";
-import { ITodoList } from "@/store/modules/TasksStoreModule";
 
 @Component({
   components: {
@@ -154,7 +154,6 @@ export default class InputBlock extends Vue {
   color: #862317;
   padding: 8px;
   border: 2px solid #c03221;
-  border-radius: 4px;
 }
 
 span {
