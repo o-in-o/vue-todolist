@@ -23,26 +23,27 @@ export default class CustomButton extends Vue {
 
 <style lang="scss" scoped>
 button {
-  padding: 3px 12px;
+  padding: 3px 7px;
   height: 80%;
   font-weight: 600;
   border: none;
   background-color: transparent;
+  border-radius: 4px;
 }
 
 .primary {
-  background: #546fff;
+  background: #3a57e8;
   font-weight: 700;
   color: #fff;
   cursor: pointer;
   transition: ease-in all 0.2s;
 
   &:hover {
-    background: #3d53db;
+    background: #546fff;
   }
 
   &:focus {
-    background: #2a3bb7;
+    background: #546fff;
   }
 }
 
@@ -64,8 +65,5 @@ button {
     border: 2px solid #c2c6e8;
     color: #141522;
   }
-}
-
-.transparent {
 }
 </style>
