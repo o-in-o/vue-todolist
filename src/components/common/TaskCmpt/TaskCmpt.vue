@@ -1,5 +1,5 @@
 <template>
-  <div class="task-group">
+  <div class="task-group" @click="showDetailInfo">
     <custom-input
       :value="done"
       class="checkbox"
@@ -102,15 +102,23 @@ export default class TaskCmpt extends Vue {
 
 <style lang="scss" scoped>
 .task-group {
+  border-radius: 8px;
   padding: 4px;
   margin-top: 10px;
-  width: 768px;
+  width: 100%;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #d8ddfa;
   color: #23348b;
+  transition: ease-out all 0.3s;
+
+  &:hover {
+    transition: ease-in all 0.3s;
+    background-color: #d1ecdd;
+    color: #106032;
+  }
 
   @media (max-width: 912px) {
     width: 468px;

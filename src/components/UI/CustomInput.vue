@@ -47,6 +47,7 @@ export default class CustomInput extends Vue {
 input {
   padding: 8px 20px;
   border: 2px solid transparent;
+  border-radius: 8px;
   outline: none;
   transition: ease-in all 0.2s;
   cursor: pointer;

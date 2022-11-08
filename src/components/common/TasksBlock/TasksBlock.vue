@@ -29,9 +29,13 @@ export default class TasksBlock extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
+.tasks-block {
+  width: 100%;
+}
+
 p {
-  border: 1px solid #12703A;
+  border: 1px solid #12703a;
   background-color: #d1ecdd;
   padding: 5px 10px;
 }

@@ -49,8 +49,7 @@ export default class DetailInfoPage extends Vue {
 <style lang="scss" scoped>
 .container {
   display: flex;
-  justify-content: center;
-  width: 820px;
+  justify-content: flex-start;
   background-color: #f9f8f8;
   padding: 10px;
 }
