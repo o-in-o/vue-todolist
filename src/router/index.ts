@@ -17,13 +17,13 @@ const routes: Array<RouteConfig> = [
     component: () => import("../views/TaskView.vue"),
   },
   {
-    path: "/:uuid",
+    path: "/task/:uuid",
     name: "detail-info-page",
     component: () => import("../pages/DetailInfoPage.vue"),
     props: true,
   },
   {
-    path: "/*",
+    path: "*",
     name: "error-page",
     component: ErrorPage,
   },
