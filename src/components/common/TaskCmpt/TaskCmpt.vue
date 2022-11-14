@@ -57,10 +57,21 @@ export default class TaskCmpt extends Vue {
   @Prop({ required: true }) readonly id!: string;
   @Prop({ default: false, required: true }) readonly isEdit!: boolean;
 
-  isDone = false;
+  // isDone = false;
 
   get todosArray(): ITodoList[] {
     return tasksStoreModule.todoListArray;
+  }
+
+  get isDone(): boolean {
+    let currentStatus = false;
+    const currentTask = this.todosArray.find((item) => item.id === this.id);
+
+    if (currentTask) {
+      currentStatus = currentTask.isDone;
+    }
+
+    return currentStatus;
   }
 
   removeItem(): void {
@@ -90,7 +101,6 @@ export default class TaskCmpt extends Vue {
   }
 
   changeStatus(val: boolean): void {
-    this.isDone = val;
     tasksStoreModule.updateTaskStatus({ checked: val, id: this.id });
   }
 
