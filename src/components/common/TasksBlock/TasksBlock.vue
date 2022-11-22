@@ -1,6 +1,8 @@
 <template>
   <div class="tasks-block">
-    <p v-if="!tasks.length">Список задач пуст</p>
+    <notification-cmpt v-if="!tasks.length"
+      >Список задач пуст</notification-cmpt
+    >
     <task-cmpt
       v-for="(item, index) in tasks"
       :id="item.id"
@@ -19,9 +21,10 @@ import TaskCmpt from "@/components/common/TaskCmpt/TaskCmpt.vue";
 import { tasksStoreModule } from "@/store";
 import { ITodoList } from "@/store/modules/TasksStoreModule";
 import CustomInput from "@/components/UI/CustomInput.vue";
+import NotificationCmpt from "@/components/common/NotificationCmpt/NotificationCmpt.vue";
 
 @Component({
-  components: { CustomButton, TaskCmpt, CustomInput },
+  components: { NotificationCmpt, CustomButton, TaskCmpt, CustomInput },
 })
 export default class TasksBlock extends Vue {
   get tasks(): ITodoList[] {
@@ -36,7 +39,7 @@ export default class TasksBlock extends Vue {
 }
 
 p {
-  border: 1px solid #12703A;
+  border: 1px solid #12703a;
   background-color: #d1ecdd;
   padding: 5px 10px;
 }
