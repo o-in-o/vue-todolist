@@ -20,12 +20,20 @@
         <magnify fill-color="#182233" />
       </custom-button>
     </custom-input>
-    <p v-if="searchError" class="error-msg">{{ searchError }}</p>
+    <div class="center">
+      <notification-cmpt v-if="searchError" type-msg="error">
+        {{ searchError }}
+      </notification-cmpt>
+    </div>
     <p v-if="todosArray.length">
       Сортировать по: <span @click="sortingByDone">статусу</span> /
       <span @click="sortingByDate"> дате создания</span>
     </p>
-    <p v-if="error" class="error-msg">{{ error }}</p>
+    <div class="center">
+      <notification-cmpt v-if="error" type-msg="error">
+        {{ error }}
+      </notification-cmpt>
+    </div>
   </div>
 </template>
 
@@ -38,6 +46,7 @@ import CustomInput from "../../UI/CustomInput.vue";
 import CustomButton from "../../UI/CustomButton.vue";
 import BookPlus from "vue-material-design-icons/BookPlus.vue";
 import Magnify from "vue-material-design-icons/Magnify.vue";
+import NotificationCmpt from "@/components/common/NotificationCmpt/NotificationCmpt.vue";
 
 @Component({
   components: {
@@ -45,6 +54,7 @@ import Magnify from "vue-material-design-icons/Magnify.vue";
     CustomButton,
     BookPlus,
     Magnify,
+    NotificationCmpt,
   },
 })
 export default class InputBlock extends Vue {
@@ -78,6 +88,7 @@ export default class InputBlock extends Vue {
 
   addTask(): void {
     tasksStoreModule.updateError("");
+    this.searchError = "";
 
     if (this.title) {
       if (this.todosArray.some((item) => item.value === this.title)) {
@@ -107,7 +118,7 @@ export default class InputBlock extends Vue {
     tasksStoreModule.updateArray(newArray);
   }
 
-//TODO: При масштабировании вынести в утилиты
+  //TODO: При масштабировании вынести в утилиты
   sortingByDate(): void {
     const newArray = this.todosArray.sort(
       (x: ITodoList, y: ITodoList) =>
@@ -139,7 +150,7 @@ export default class InputBlock extends Vue {
 
 <style lang="scss" scoped>
 .input-block {
-  width: 768px;
+  width: 100%;
 
   @media (max-width: 912px) {
     width: 468px;
@@ -150,8 +161,14 @@ export default class InputBlock extends Vue {
   }
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 .input-task {
   box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.08);
+  padding: 0 5px;
 }
 
 .error-msg {

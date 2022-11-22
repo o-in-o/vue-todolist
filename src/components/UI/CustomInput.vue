@@ -51,7 +51,7 @@ input {
   transition: ease-in all 0.2s;
   cursor: pointer;
   font-weight: 400;
-  margin:3px 15px 0 0;
+  margin:3px 15px 3px 0;
   width: 100%;
   border-radius: 7px;
   font-size: 16px;

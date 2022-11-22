@@ -148,6 +148,9 @@ export default class TaskCmpt extends Vue {
 
 .checkbox {
   width: 30px;
+  justify-content: center;
+  border-right: 1px solid #b9b9b9;
+  margin-left: 15px;
 }
 
 .view {

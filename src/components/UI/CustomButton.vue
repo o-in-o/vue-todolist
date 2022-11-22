@@ -26,8 +26,10 @@ button {
   padding: 3px 12px;
   height: 80%;
   font-weight: 600;
-  border: none;
   background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
 .primary {
@@ -69,8 +71,9 @@ button {
 .transparent {
   background-color: transparent;
 
-  & svg:hover {
-    fill: red;
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.13);
+    transition: ease-in-out all 0.3s;
   }
 }
 </style>
