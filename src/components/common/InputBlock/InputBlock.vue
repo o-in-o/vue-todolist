@@ -4,18 +4,20 @@
       :value.sync="title"
       placeholder="Введите название задачи"
       @keyup.enter="addTask"
+      class="input-task"
     >
-      <custom-button @click="addTask">
-        <book-plus fill-color="#fff" />
+      <custom-button color="transparent" @click="addTask">
+        <book-plus fill-color="#182233" />
       </custom-button>
     </custom-input>
     <custom-input
       :value.sync="searchedItem"
       placeholder="Найти и просмотреть задачу"
       @keyup.enter="searchTask"
+      class="input-task"
     >
-      <custom-button @click="searchTask">
-        <magnify fill-color="#fff" />
+      <custom-button color="transparent" @click="searchTask">
+        <magnify fill-color="#182233" />
       </custom-button>
     </custom-input>
     <p v-if="searchError" class="error-msg">{{ searchError }}</p>
@@ -146,6 +148,10 @@ export default class InputBlock extends Vue {
   @media (max-width: 552px) {
     width: 320px;
   }
+}
+
+.input-task {
+  box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.08);
 }
 
 .error-msg {

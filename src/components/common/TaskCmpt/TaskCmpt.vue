@@ -8,7 +8,7 @@
       @change="changeStatus($event.target.checked)"
     />
     <custom-input
-      :class="{ 'input is-done': isDone, input: !isDone }"
+      :class="{ 'input is-done': isDone, 'input': !isDone }"
       :readonly="isEdit"
       :value="value"
       color="transparent"
@@ -113,13 +113,13 @@ export default class TaskCmpt extends Vue {
 <style lang="scss" scoped>
 .task-group {
   padding: 4px;
-  margin-top: 10px;
+  //margin-top: 7px;
   width: 768px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #d8ddfa;
+  box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.08);
   color: #23348b;
 
   @media (max-width: 912px) {
@@ -138,6 +138,8 @@ export default class TaskCmpt extends Vue {
 
 .input {
   width: 100%;
+  border-right: 1px solid rgba(159, 159, 159, 0.2);
+  margin-right: 5px;
 }
 
 .is-done {

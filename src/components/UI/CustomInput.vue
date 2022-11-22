@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import {Component, Prop, Vue} from "vue-property-decorator";
 
 type colorInput = "primary" | "transparent";
 
@@ -45,18 +45,33 @@ export default class CustomInput extends Vue {
 
 <style lang="scss" scoped>
 input {
-  padding: 8px 20px;
-  border: 2px solid transparent;
+  padding: 10px 16px;
+  border: 1px solid transparent;
   outline: none;
   transition: ease-in all 0.2s;
   cursor: pointer;
-  font-weight: 600;
-  margin-right: 15px;
+  font-weight: 400;
+  margin:3px 15px 0 0;
   width: 100%;
+  border-radius: 7px;
+  font-size: 16px;
+
+
 
   &:focus {
     outline: none;
-    border: 2px solid #546fff;
+    border: 1px solid #116ACC;
+    background: rgba(160, 195, 255, 0.1);
+  }
+
+  &:hover {
+    background: rgba(160, 195, 255, 0.1);
+    border: 1px solid #116ACC;
+
+  }
+
+  &:disabled {
+    background-color: transparent;
   }
 }
 
@@ -65,8 +80,7 @@ input {
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
-  height: 50px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 .transparent {

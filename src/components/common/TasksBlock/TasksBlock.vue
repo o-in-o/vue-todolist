@@ -18,9 +18,10 @@ import CustomButton from "@/components/UI/CustomButton.vue";
 import TaskCmpt from "@/components/common/TaskCmpt/TaskCmpt.vue";
 import { tasksStoreModule } from "@/store";
 import { ITodoList } from "@/store/modules/TasksStoreModule";
+import CustomInput from "@/components/UI/CustomInput.vue";
 
 @Component({
-  components: { CustomButton, TaskCmpt },
+  components: { CustomButton, TaskCmpt, CustomInput },
 })
 export default class TasksBlock extends Vue {
   get tasks(): ITodoList[] {
@@ -30,6 +31,10 @@ export default class TasksBlock extends Vue {
 </script>
 
 <style scoped lang="scss">
+.tasks-block {
+  box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.08);
+}
+
 p {
   border: 1px solid #12703A;
   background-color: #d1ecdd;
