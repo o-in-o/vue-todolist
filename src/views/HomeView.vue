@@ -46,7 +46,8 @@ export default class HomeView extends Vue {}
 <style lang="scss" scoped>
 .home {
   width: 768px;
-  background-color: #f9f8f8;
+  background-color: #fafafa;
+  box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.08);
   color: #232d42;
   font-weight: 500;
 }

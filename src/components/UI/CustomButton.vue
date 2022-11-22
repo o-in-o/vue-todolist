@@ -67,5 +67,10 @@ button {
 }
 
 .transparent {
+  background-color: transparent;
+
+  & svg:hover {
+    fill: red;
+  }
 }
 </style>

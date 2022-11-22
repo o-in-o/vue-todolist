@@ -25,6 +25,7 @@ export default class TaskView extends Vue {}
 <style scoped>
 .container {
   background-color: #f9f8f8;
+  box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.08);
   display: flex;
   justify-content: center;
   align-items: center;
